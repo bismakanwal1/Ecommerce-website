@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import signupImage from '../assets/images/formImage.png'; // Import your image file
 
-const SignupForm = () => {
+const LoginForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
+  
     email: '',
     phone: '',
     password: '',
@@ -31,19 +31,9 @@ const SignupForm = () => {
           <img src={signupImage} alt="Signup Image" className="img-fluid" />
         </div>
         <div className="col-lg-6 py-3 px-lg-5 p-3 mt-lg-4">
-          <h2>Create an account</h2>
+          <h2>Login to Exclusive</h2>
           <p>Enter your details below</p>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control border-0 border-bottom"
-              id="name"
-              name="name"
-              placeholder="Full Name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
+        
           <div className="mb-3">
             <input
               type="email"
@@ -77,13 +67,13 @@ const SignupForm = () => {
               onChange={handleChange}
             />
           </div>
-          
-          <button type="submit" className="btn btn-danger py-2" style={{ width: "100%" }}>Create Account</button>
-          <p className="mt-3 p-2 text-center">Already have an account? <Link to="/login" className="btn btn-link" style={{ color: "black", textDecoration:"none",fontWeight:"500",paddingLeft:"3px",paddingBottom:"13px"}}>Login</Link></p>
+         
+          <button type="submit" className="btn btn-danger py-2 px-5">Login</button>
+  <Link to="/login" className="btn btn-link" style={{ color: "red", textDecoration:"none",fontWeight:"400" , float:"right"}}>Forget Password?</Link>
         </div>
       </div>
     </form>
   );
 };
 
-export default SignupForm;
+export default LoginForm;
